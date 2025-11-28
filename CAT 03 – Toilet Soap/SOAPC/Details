@@ -1,0 +1,10 @@
+Client : Unilever
+
+Request link : https://requestmanager.atlassian.net/browse/RRP-1440 
+
+The client needs a report including :-
+  - Format
+  - Brand
+  - Size Range ( <= 50 gm , 51 - 100 gm , 101 - 150 gm , +150 gm , Other)
+  - SKU
+
