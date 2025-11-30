@@ -1,0 +1,26 @@
+he need Sizes to be classified into 4 groups in (ml)
+  - <= 50 ml
+  - 51 - 100 ml
+  - 101 - 150 ml
+  - +150 ml 
+
+We find several cases in Sizes need to be converted to (ml)
+  -- CASE 1 :
+        sizes like (120ml+50ml) 170ml --- Take the number outside the parentheses without the unit .
+        or (120g+50g) 170g without the unit (g) and convert it to (ml) by dividing by 1.4 
+  -- CASE 2 :
+        sizes like 100ml (125g) --- Take the number outside the parentheses
+  -- CASE 3 :
+        sizes like 100ml/125g --- Take the number in (ml)
+  -- CASE 4 :
+        sizes like 100g/77ml --- Take the number in (ml)
+	-- CASE 5 : 
+        sizes like 3.3oz (100ml) --- Take the number in (ml) inside the parentheses 
+	-- CASE 6 : 
+        sizes like 2.7oz (77g) --- Take the number in side the parentheses and convert it to (ml) by dividing by 1.4 
+	-- CASE 7 : 
+        sizes like 5.5oz(156) --- Take the number in side the parentheses and convert it to (ml) by dividing by 1.4 
+	-- CASE 8 : 
+        sizes in g Take the number in side the parentheses and convert it to (ml) by dividing by 1.4 
+        sizes in ml Take only the number 
+        sizes in lt Take only the number and add '000' at the end
