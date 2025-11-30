@@ -76,7 +76,7 @@ WITH Cleaned_Dictionary as
 						'ml','')
 					)
 				----------------------------------------------------------------------------------------------------------------------------------------
-				-- CASE 5 : sizes like 3.3oz (100ml) --- Take the number outside the parentheses
+				-- CASE 5 : sizes like 3.3oz (100ml) --- Take the number in (ml) inside the parentheses
 				----------------------------------------------------------------------------------------------------------------------------------------				
 				WHEN size_description LIKE '%oz%(%ml)%'
 				THEN
@@ -88,7 +88,7 @@ WITH Cleaned_Dictionary as
 								CHARINDEX(')',size_description)  - CHARINDEX('(',size_description) - 1),
 						'ml',''))
 				----------------------------------------------------------------------------------------------------------------------------------------
-				-- CASE 6 : sizes like 5.5oz(156)    or    2.7oz (77g) --- Take the number outside the parentheses
+				-- CASE 6 : sizes like 2.7oz (77g) --- Take the number in side the parentheses and convert it to (ml) by dividing by 1.4
 				----------------------------------------------------------------------------------------------------------------------------------------				
 				WHEN size_description LIKE '%(%g)%' 
 					THEN
@@ -100,7 +100,7 @@ WITH Cleaned_Dictionary as
 							)
 						)
 				----------------------------------------------------------------------------------------------------------------------------------------
-				-- CASE 7 : sizes like 5.5oz(156) --- Take the number outside the parentheses
+				-- CASE 7 : sizes like 5.5oz(156) --- Take the number in side the parentheses and convert it to (ml) by dividing by 1.4 
 				----------------------------------------------------------------------------------------------------------------------------------------				
 				WHEN size_description LIKE '%oz(%' THEN
 					CONCAT(
